@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>krishna</title>
+</head>
+<body>
+    <ul id="images">
+        <li><img width="200px" height="250px" id="maharana" src="https://i.pinimg.com/736x/8f/96/5a/8f965a97bbdbe73ac1dc6bd70b2756fd.jpg" alt=""></li>
+        <li><img width="200px" height="250px" id="chetak" src="https://i.pinimg.com/236x/0e/3e/88/0e3e88525c3ab6376d4f6becc6bcb3fb.jpg" alt=""></li>
+        <li><img width="200px" height="250px" id="shivaji" src="https://i.pinimg.com/474x/f5/19/bb/f519bbb05b14208644d2c62901f6bde0.jpg" alt=""></li>
+    </ul>
+</body>
+<script>
+    document.getElementById("images").addEventListener("click",function(){
+         console.log("inside the ul")
+    },false)
+    document.getElementById("maharana").addEventListener("click",function(){
+         console.log("inside the img1")
+        //  event.stopPropagation() to stop bubbling up
+    },false) 
+    // so first it display the console of img1 then ul in console it is called as bubbling up
+    // for consoling parent node 
+     document.getElementById("maharana").addEventListener("click",function(e){
+       console.log(e.target.parentNode)
+       // now lets understand how to remove it
+       const removeIt = e.target.parentNode;
+       removeIt.remove()
+        
+
+       },false)
+
+    
+    
+</script>
+</html>
