@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keshav</title>
+</head>
+<body>
+    
+    <h1>Here is something for you</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+</body>
+       <!-- interval chalte rhte hai agr ek baar chalu ho gaya to or 
+            settimeout ko har bar click krna hota hai -->
+
+    <script>
+     
+        function hello(){
+            console.log("hii i am listening");
+        }
+       document.getElementById("start").addEventListener("click",()=>{
+        intervalId = setInterval(hello,1000)
+       });
+       document.getElementById("stop").addEventListener("click",()=>{
+        clearInterval(intervalId)
+       });
+       
+    
+        
+
+    </script>
+</html>
