@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bg changer</title>
+</head>
+<body>
+    <h1>Start should change the background color every second</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+
+</body>
+    <script>
+        let color = "#"
+        let num = "0123456789ABCDEF";
+        const bgchanger =  function(){
+            for(let i=0;i<6;i++){
+           let random = Math.floor(Math.random()*16);
+           color += num[random];
+        }
+        document.body.style.backgroundColor = color;
+        color = "#";
+        }
+        
+        let strt = document.querySelector("#start");
+        let stp = document.querySelector("#stop");
+
+        strt.addEventListener("click",function(){
+            changecolor = setInterval(bgchanger,1000);
+        })
+        
+       const stopchangingcolor = function(){
+            clearInterval(changecolor);
+        }
+        stp.addEventListener("click",stopchangingcolor);
+        
+
+        
+         
+        
+        
+    </script>
+</html>
